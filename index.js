@@ -11,7 +11,7 @@ const bcs = new BCS(getSuiMoveConfig())
 
 // bcs.registerAddressType('SuiAddress', 20, 'hex');
 
-bcs.registerStructType('AiCapyData', {
+bcs.registerStructType('TestBCS', {
     prompt: 'string',
     style: 'string',
     // address: 'SuiAddress' 
@@ -23,7 +23,7 @@ for (const style of styles) {
     const prompt = "a wild flower field"
     // const address = '0x'.padEnd(62, '0');    
     
-    const serializedData = bcs.ser('AiCapyData', {
+    const serializedData = bcs.ser('TestBCS', {
         prompt,
         style,
         // address    
