@@ -38,4 +38,5 @@ for (const style of styles) {
     console.log(style)
     console.log("DATA", data);
     console.log("SIGNATURE", signature)
+    console.log("")
 }
