@@ -30,10 +30,11 @@ for (const style of styles) {
     });
     
     const hashed = fromHEX(utils.keccak256(serializedData.toBytes()));
-    const signedData = secp256k1.ecdsaSign(hashed, privKey).signature;
+    const signInfo = secp256k1.ecdsaSign(hashed, privKey);
+    const signedData = signInfo.signature;
     
     const data = toHEX(serializedData.toBytes());
-    const signature = toHEX(signedData) + '00';
+    const signature = toHEX(signedData) + `0${signInfo.recid}`;
     
     console.log(style)
     console.log("DATA", data);
